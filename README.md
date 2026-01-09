@@ -1,4 +1,4 @@
-## sigil.box
+# sigil.box
 
 This is the content of our `sigil.box` site.
 
