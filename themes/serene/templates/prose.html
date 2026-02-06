@@ -43,7 +43,7 @@
 {% block content %}
 <div id="wrapper">
   <main>
-    {{ macros::back_link(path = get_url(path="/")) }}
+    {% include "_header.html" %}
     {% include "_section_title.html" %}
     <div>
       {% if section.extra.copy %}
@@ -66,6 +66,7 @@
       {% endif %}
     </div>
 
+    {{ macros::back_link(path = get_url(path="/")) }}
     {% include "_footer.html" %}
   </main>
 </div>

@@ -32,6 +32,17 @@ taxonomies = "on"
 anchors = "on"
 
 [extra]
+# Site header (shown on all pages)
+header_name = "Sigil"
+header_bio = "An Ethereum L2 for believers."
+header_avatar = "img/LogoMark_CandlelightYellow.png"
+header_avatar_light = "img/LogoMark_SigilRed.png"
+header_links = [
+  { name = "GitHub", icon = "github", url = "https://github.com/unattended-backpack" },
+  { name = "Twitter", icon = "twitter", url = "https://twitter.com/Sigil_L2" },
+  { name = "Email", icon = "email", url = "mailto:root@sigil.box" },
+]
+
 sections = [
   { name = "about", path = "/about", is_external = false },
   { name = "posts", path = "/posts", is_external = false },

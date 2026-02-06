@@ -80,16 +80,10 @@
     {% endif %}
   </aside>
   <main>
-    {{ macros::back_link(path = get_url(path=section.path)) }}
+    <div id="post-sticky-header">
+      {% include "_header.html" %}
 
-    <div>
-      {% if page.extra.copy is defined %}{% set allow_copy = page.extra.copy %}{% else %}{% set allow_copy = section.extra.copy %}{% endif %}
-      {% if allow_copy %}
-      {% set copy_icon = load_data(path="icon/copy.svg") %}
-      {% set check_icon = load_data(path="icon/check.svg") %}
-      <div id="copy-cfg" style="display: none;" data-copy-icon="{{ copy_icon }}" data-check-icon="{{ check_icon }}"></div>
-      {% endif %}
-      <article class="prose">
+      <div id="post-title-section" class="prose">
         <h1>{{ page.title }}</h1>
         <div id="post-info">
           <div id="date">
@@ -108,7 +102,17 @@
           </div>
           {% endif %}
         </div>
+      </div>
+    </div>
 
+    <div id="post-content-scroll">
+      {% if page.extra.copy is defined %}{% set allow_copy = page.extra.copy %}{% else %}{% set allow_copy = section.extra.copy %}{% endif %}
+      {% if allow_copy %}
+      {% set copy_icon = load_data(path="icon/copy.svg") %}
+      {% set check_icon = load_data(path="icon/check.svg") %}
+      <div id="copy-cfg" style="display: none;" data-copy-icon="{{ copy_icon }}" data-check-icon="{{ check_icon }}"></div>
+      {% endif %}
+      <article class="prose">
         {% if page.extra.outdate_alert is defined %}{% set show_outdate_alert = page.extra.outdate_alert %}{% else %}{% set show_outdate_alert = section.extra.outdate_alert %}{% endif %}
         {% if page.extra.outdate_alert_days is defined %}{% set outdate_alert_days = page.extra.outdate_alert_days %}{% else %}{% set outdate_alert_days = section.extra.outdate_alert_days %}{% endif %}
 
@@ -133,10 +137,11 @@
       <div class="giscus"></div>
       {% include "_giscus_script.html" %}
       {% endif %}
-    </div>
 
-    {% include "_footer.html" %}
+      {{ macros::back_link(path = get_url(path=section.path)) }}
+    </div>
   </main>
+  {% include "_footer.html" %}
 </div>
 {% endblock content %}
 

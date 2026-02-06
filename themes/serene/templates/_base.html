@@ -21,7 +21,7 @@
 <body class="{% block page %}{% endblock page%}{% if config.extra.force_theme == "dark" %} dark{% endif %}">
   {% if not config.extra.force_theme %}
   <script>
-    const theme = sessionStorage.getItem('theme');
+    const theme = localStorage.getItem('theme');
     const match = window.matchMedia("(prefers-color-scheme: dark)").matches
     if ((theme && theme == 'dark') || (!theme && match)) {
       document.body.classList.add('dark');

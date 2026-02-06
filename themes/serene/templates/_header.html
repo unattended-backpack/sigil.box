@@ -1,0 +1,36 @@
+<section id="info">
+  {% if config.extra.header_avatar %}
+  <a href="{{ get_url(path='/') }}" class="instant" aria-label="Home">
+    <img class="avatar-dark" src="{{ get_url(path=config.extra.header_avatar) }}" alt="avatar">
+    {% if config.extra.header_avatar_light %}
+    <img class="avatar-light" src="{{ get_url(path=config.extra.header_avatar_light) }}" alt="avatar">
+    {% endif %}
+  </a>
+  {% endif %}
+  <div id="text">
+    <div>
+      <span id="name">{{ config.extra.header_name }}</span>
+    </div>
+    {% if config.extra.header_bio %}
+    <div id="bio">{{ config.extra.header_bio }}</div>
+    {% endif %}
+  </div>
+</section>
+<section id="links">
+  <div id="left">
+    {% for section in config.extra.sections %}
+    <a {% if section.is_external %}href="{{ section.path }}" target="_blank" rel='noreferrer noopener'{% else %}href="{{ get_url(path=section.path) }}" class="instant"{% endif %}>{{ section.name }}</a>
+    {% endfor %}
+  </div>
+  <div id="right">
+    {% for link in config.extra.header_links %}
+    <a href="{{ link.url }}" aria-label="{{ link.name }}" target="_blank" rel='noreferrer noopener'>
+      {% set icon_path = "icon/" ~ link.icon ~ ".svg" %}
+      {% set icon = load_data(path=icon_path) %}
+      {{ icon | safe }}
+    </a>
+    {% endfor %}
+    {% if not config.extra.force_theme %}
+    {% endif %}
+  </div>
+</section>
