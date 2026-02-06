@@ -13,18 +13,20 @@ feed_filenames = ["feed.xml"]
 taxonomies = [{ name = "tags" }, { name = "categories" }]
 
 [markdown]
-highlight_code = true
-highlight_theme = "css"
-extra_syntaxes_and_themes = ["themes/serene/highlight_themes"]
-highlight_themes_css = [
-  { theme = "serene-light", filename = "hl-light.css" },
-  { theme = "serene-dark", filename = "hl-dark.css" },
-]
 render_emoji = false
 external_links_target_blank = false
 external_links_no_follow = true
 external_links_no_referrer = true
 smart_punctuation = false
+
+[markdown.highlighting]
+style = "class"
+extra_themes = [
+  "themes/serene/highlight_themes/serene-light.json",
+  "themes/serene/highlight_themes/serene-dark.json",
+]
+light_theme = "Tomorrow"
+dark_theme = "Tomorrow Night"
 
 [slugify]
 paths = "on"
@@ -32,6 +34,17 @@ taxonomies = "on"
 anchors = "on"
 
 [extra]
+# Site header (shown on all pages)
+header_name = "Sigil"
+header_bio = "An Ethereum L2 for believers."
+header_avatar = "img/LogoMark_CandlelightYellow.png"
+header_avatar_light = "img/LogoMark_SigilRed.png"
+header_links = [
+  { name = "GitHub", icon = "github", url = "https://github.com/unattended-backpack" },
+  { name = "Twitter", icon = "twitter", url = "https://twitter.com/Sigil_L2" },
+  { name = "Email", icon = "email", url = "mailto:root@sigil.box" },
+]
+
 sections = [
   { name = "about", path = "/about", is_external = false },
   { name = "posts", path = "/posts", is_external = false },

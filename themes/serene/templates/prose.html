@@ -16,7 +16,7 @@
 {% endblock desc %}
 
 {% block head %}
-{% if config.markdown.highlight_theme == "css" %}
+{% if config.markdown.highlighting.style == "class" %}
 <link id="hl" rel="stylesheet" type="text/css" href="/hl-{% if config.extra.force_theme == "dark" %}dark{% else %}light{% endif %}.css" />
 {% endif %}
 {% if section.extra.math %}
@@ -43,7 +43,7 @@
 {% block content %}
 <div id="wrapper">
   <main>
-    {{ macros::back_link(path = get_url(path="/")) }}
+    {% include "_header.html" %}
     {% include "_section_title.html" %}
     <div>
       {% if section.extra.copy %}
@@ -66,6 +66,7 @@
       {% endif %}
     </div>
 
+    {{ macros::back_link(path = get_url(path="/")) }}
     {% include "_footer.html" %}
   </main>
 </div>

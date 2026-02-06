@@ -1,49 +1,66 @@
 <style>
 
-  /* light mode colors */
-  body {
-    --primary-color: #5871a2;
-    --primary-pale-color: #5871a233;
-    --primary-decoration-color: #5871a210;
-    --bg-color: #ffffff;
-    --text-color: #2f3030;
-    --text-pale-color: #767676;
-    --text-decoration-color: #a9a9a9;
-    --highlight-mark-color: #5f75b020;
-
-    --callout-note-color: #5871a2;
-    --callout-tip-color: #268556;
-    --callout-important-color: #885fc9;
-    --callout-warning-color: #ab6632;
-    --callout-caution-color: #c64e4e;
+  /* GeistMono font */
+  @font-face {
+    font-family: 'GeistMono-Regular';
+    src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/996b00fb-4b7a-403d-8da2-ce2225450681.woff2') format('woff2');
   }
 
-  /* dark mode colors */
-  body.dark {
-    --primary-color: #6f8fd1;
-    --primary-pale-color: #6f8fd166;
-    --primary-decoration-color: #6f8fd112;
-    --bg-color: #1c1c1c;
-    --text-color: #c1c1c1;
-    --text-pale-color: #848484;
-    --text-decoration-color: #5f5f5f;
-    --highlight-mark-color: #8296cb3b;
+  /* light mode colors - Sigil theme */
+  body {
+    --primary-color: #ed1c24;              /* Gold */
+    --primary-pale-color: #ed1c2466;       /* Sigil Red 40% */
+    --primary-decoration-color: #ed1c2412; /* Sigil Red 7% */
+    --bg-color: #faebd2;                   /* Bone White */
+    --text-color: #24201e;                 /* Madness Black */
+    --text-pale-color: #24201e99;          /* Madness Black 60% */
+    --text-decoration-color: #504841;      /* Gray 60 */
+    --highlight-mark-color: #ed1c2433;     /* Sigil Red 20% */
 
-    --callout-note-color: #6f8fd1;
-    --callout-tip-color: #47976f;
-    --callout-important-color: #9776cd;
-    --callout-warning-color: #ad7a52;
-    --callout-caution-color: #d06161;
+    --callout-note-color: #fbb040;         /* Gold */
+    --callout-tip-color: #fbb040;          /* Gold */
+    --callout-important-color: #fbb040;    /* Gold */
+    --callout-warning-color: #fbb040;      /* Gold */
+    --callout-caution-color: #ed1c24;      /* Sigil Red */
+  }
+
+  /* dark mode colors - Sigil theme */
+  body.dark {
+    --primary-color: #fbb040;              /* Gold */
+    --primary-pale-color: #fbb04066;       /* Sigil Red 40% */
+    --primary-decoration-color: #fbb04012; /* Sigil Red 7% */
+    --bg-color: #24201e;                   /* Madness Black */
+    --text-color: #faebd2;                 /* Bone White */
+    --text-pale-color: #faebd299;          /* Bone White 60% */
+    --text-decoration-color: #3c3630;      /* Gray 70 */
+    --highlight-mark-color: #ed1c2433;     /* Sigil Red 20% */
+
+    --callout-note-color: #fbb040;         /* Gold */
+    --callout-tip-color: #fbb040;          /* Gold */
+    --callout-important-color: #fbb040;    /* Gold */
+    --callout-warning-color: #fbb040;      /* Gold */
+    --callout-caution-color: #ed1c24;      /* Sigil Red */
+  }
+
+  /* theme-aware avatar */
+  .avatar-light { display: inline; }
+  .avatar-dark { display: none; }
+  body.dark .avatar-light { display: none; }
+  body.dark .avatar-dark { display: inline; }
+
+  /* home page layout-list spacing */
+  body.homepage .layout-list {
+    padding-top: 1.5em;
   }
 
   /* typography */
   body {
-    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --main-font: 'GeistMono-Regular', Consolas, monaco, monospace;
+    --code-font: 'GeistMono-Regular', Consolas, monaco, monospace;
     --homepage-max-width: 768px;
     --main-max-width: 768px;
     --avatar-size: 60px;
-    --font-size: 16px;
+    --font-size: 18px;
     --line-height: 1.75;
     --img-border-radius: 0px;
     --detail-border-radius: 0px;
